@@ -214,7 +214,10 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
-            min-width: 120px;
+            min-width: 140px; /* Made consistent */
+            flex: 1; /* Make boxes equal size */
+            max-width: 160px; /* Limit maximum width */
+            color: white; /* Added white text color */
         }
 
         .stat-item:hover {
@@ -226,7 +229,7 @@
         .stat-number {
             font-size: 1.75rem;
             font-weight: 800;
-            color: var(--accent);
+            color: white; /* Changed from var(--accent) to white */
             animation: counter 2s ease-out;
         }
 
@@ -328,6 +331,7 @@
             display: block;
             width: 90%;
             max-width: 400px;
+            top: 80px; /* Position menu below the X button */
         }
 
         .nav ul {
@@ -409,6 +413,19 @@
 
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Improved X button styling */
+        .menu-toggle {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            box-shadow: var(--shadow);
+        }
+
+        .menu-toggle span {
+            background: white;
+            height: 3px; /* Slightly thicker lines */
+            border-radius: 2px;
         }
 
         /* Main Content */
@@ -601,6 +618,7 @@
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.6s ease;
+            z-index: 1;
         }
 
         .skill-category:hover::before {
@@ -851,6 +869,11 @@
             .nav {
                 display: block;
                 padding: 1rem 2rem;
+                top: 1rem; /* Reset for desktop */
+            }
+            
+            .nav.active {
+                top: 1rem; /* Reset for desktop */
             }
             
             .nav ul {
@@ -1019,10 +1042,7 @@
                 </div>
             </div>
 
-            <a href="#objective" class="cta-button">
-                <i class="fas fa-rocket"></i>
-                <span>Explore My Journey</span>
-            </a>
+            <!-- Explore My Journey button removed as requested -->
         </div>
     </section>
 
